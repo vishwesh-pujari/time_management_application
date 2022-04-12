@@ -1,0 +1,29 @@
+<%- include("partials/header"); %>
+
+<p><%= schedule.name %></p>
+<p><%= schedule.type %></p>
+<hr>
+
+<table id="schedule-table">
+    <tr>
+        <th>Task Title</th>
+        <th>Task Description</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Duration</th>
+        <th>Importance</th>
+    </tr>
+<%schedule.tasks.forEach(function (task) {%>
+    <tr>
+        <td><%= task.title %></td>
+        <td><%= task.desc %></td>
+        <td><%= task.sTime %></td>
+        <td><%= task.sTime + task.duration %></td>
+        <td><%= task.duration %></td>
+        <td><%= task.importance %></td>
+    </tr>
+
+<%});%>
+</table>
+
+<%- include("partials/footer"); %>

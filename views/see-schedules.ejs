@@ -1,0 +1,15 @@
+<%- include("partials/header"); %>
+
+<%if (schedules.length > 0) {%>
+    <%schedules.forEach(function (schedule) {%>
+        <p><%= schedule.name %></p>
+        <p><%= schedule.type %></p>
+        <a href="/see-schedule/<%=schedule._id%>">View Schedule</a>
+        <hr>
+
+    <%});%>
+<%} else {%>
+    <p>You have no schedules created</p>
+<%};%>
+
+<%- include("partials/footer"); %>

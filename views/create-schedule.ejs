@@ -1,0 +1,33 @@
+<%- include("partials/header"); %>
+
+<form action="/create-schedule" method="post">
+    <label for="scheduleName" style="font-weight: bold;">Schedule Name</label><br>
+    <input type="text" name="scheduleName" required><br>
+    <label for="scheduleType" style="font-weight: bold;">Schedule Type</label><br>
+    <input type="text" name="scheduleType" required>
+    <table id="schedule-table">
+        <tr>
+            <th>Task Title</th>
+            <th>Task Description</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Duration</th>
+            <th>Importance</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="title" id="title" required></td>
+            <td><input type="text" name="desc" id="desc" required></td>
+            <td><input type="number" name="start_time" id="start_time" required></td>
+            <td><input type="number" name="end_time" id="end_time" required></td>
+            <td><input type="number" name="duration" id="duration" required></td>
+            <td><input type="number" name="importance" id="importance" required></td>
+            <td><button type="button" class="btn btn-primary" onclick="deleteTask(event)">Delete Task</button></td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" id="add_task_btn" type="button">Add Task</button>
+    <button class="btn btn-outline-primary" type="submit">Create Schedule</button>
+</form>
+
+<script src="js/create-schedule.js"></script>
+
+<%- include("partials/footer"); %>
